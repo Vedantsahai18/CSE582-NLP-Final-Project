@@ -4,11 +4,9 @@ from rouge_score import rouge_scorer
 import numpy as np
 import pandas as pd
 
-
-rouge_cal = rouge_scorer.RougeScorer(['rouge1','rouge2', 'rougeLsum'], use_stemmer=False)
-
-def evaluate( corpus, p_stop, max_extracted_sentences, rouge_cal ):
+def evaluate( corpus, p_stop, max_extracted_sentences ):
     scores = []
+    rouge_cal = rouge_scorer.RougeScorer(['rouge1','rouge2', 'rougeLsum'], use_stemmer=False)
     for index,rows in corpus.iterrows():
         gold_summary = rows["abs_summary"]
         extracted_summary = rows["modelsummary"]
@@ -22,7 +20,7 @@ def evaluate( corpus, p_stop, max_extracted_sentences, rouge_cal ):
 def main():
     df = pd.read_csv('data/corpusfinal.csv')
     df_test = df.iloc[:int(len(df)*0.3)]
-    evaluate( df_test, 0.6, 7, rouge_cal )
+    evaluate( df_test, 0.6, 7)
 
 if __name__ == "__main__":
     main()
