@@ -1,0 +1,50 @@
+[current_batch: 00100] loss: 1.905, learning rate: 0.000100
+[current_batch: 00200] loss: 1.835, learning rate: 0.000100
+[current_batch: 00300] loss: 1.770, learning rate: 0.000100
+[current_batch: 00400] loss: 1.767, learning rate: 0.000100
+[current_batch: 00500] loss: 1.731, learning rate: 0.000100
+[current_batch: 00600] loss: 1.769, learning rate: 0.000100
+Starting validation ...
+val: 0.7341, 0.6221, 0.7225
+[current_batch: 00700] loss: 0.160, learning rate: 0.000100
+[current_batch: 00800] loss: 1.746, learning rate: 0.000100
+[current_batch: 00900] loss: 1.752, learning rate: 0.000100
+[current_batch: 01000] loss: 1.762, learning rate: 0.000100
+Starting validation ...
+val: 0.6239, 0.4282, 0.6006
+[current_batch: 01100] loss: 1.744, learning rate: 0.000100
+[current_batch: 01200] loss: 1.732, learning rate: 0.000100
+[current_batch: 01300] loss: 1.730, learning rate: 0.000100
+Starting validation ...
+val: 0.7341, 0.6221, 0.7225
+[current_batch: 01400] loss: 0.312, learning rate: 0.000100
+[current_batch: 01500] loss: 1.784, learning rate: 0.000100
+[current_batch: 01600] loss: 1.724, learning rate: 0.000100
+[current_batch: 01700] loss: 1.726, learning rate: 0.000100
+[current_batch: 01800] loss: 1.749, learning rate: 0.000100
+[current_batch: 01900] loss: 1.732, learning rate: 0.000100
+[current_batch: 02000] loss: 1.718, learning rate: 0.000100
+Starting validation ...
+val: 0.7341, 0.6221, 0.7225
+Starting validation ...
+val: 0.7341, 0.6221, 0.7225
+[current_batch: 02100] loss: 0.475, learning rate: 0.000100
+[current_batch: 02200] loss: 1.745, learning rate: 0.000100
+[current_batch: 02300] loss: 1.732, learning rate: 0.000100
+[current_batch: 02400] loss: 1.697, learning rate: 0.000100
+[current_batch: 02500] loss: 1.767, learning rate: 0.000100
+[current_batch: 02600] loss: 1.763, learning rate: 0.000100
+[current_batch: 02700] loss: 1.762, learning rate: 0.000100
+Starting validation ...
+val: 0.7341, 0.6221, 0.7225
+[current_batch: 02800] loss: 0.635, learning rate: 0.000100
+[current_batch: 02900] loss: 1.744, learning rate: 0.000100
+[current_batch: 03000] loss: 1.707, learning rate: 0.000100
+Starting validation ...
+val: 0.7341, 0.6221, 0.7225
+[current_batch: 03100] loss: 1.770, learning rate: 0.000100
+[current_batch: 03200] loss: 1.709, learning rate: 0.000100
+[current_batch: 03300] loss: 1.732, learning rate: 0.000100
+[current_batch: 03400] loss: 1.745, learning rate: 0.000100
+Starting validation ...
+val: 0.7341, 0.6221, 0.7225
