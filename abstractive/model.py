@@ -16,8 +16,8 @@ def train(args,dataset,model_checkpoint,tokenizer):
     small_train,small_validation = generate_train_dataset(dataset,tokenizer,train_size = 1700, valid_size = 200)
 
     print(model_checkpoint)
-    # model = AutoModelForSeq2SeqLM.from_pretrained(model_checkpoint)
-    model = AutoModelForMaskedLM.from_pretrained(model_checkpoint)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_checkpoint)
+    # model = AutoModelForMaskedLM.from_pretrained(model_checkpoint)
 
     batch_size = args.batch_size
     num_train_epochs = args.epochs
