@@ -13,7 +13,7 @@ def train(args,dataset,model_checkpoint,tokenizer):
     nltk.download("punkt")
 
 
-    small_train,small_validation = generate_train_dataset(dataset,tokenizer,train_size = 1700, valid_size = 200)
+    small_train,small_validation = generate_train_dataset(dataset,tokenizer,train_size=1950,valid_size=400)
 
     print(model_checkpoint)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_checkpoint)

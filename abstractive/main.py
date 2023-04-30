@@ -8,7 +8,7 @@ import pandas as pd
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--batch_size', type=int, default = 4)
+    parser.add_argument('--batch_size', type=int, default = 8)
     parser.add_argument('--epochs', type=int,default = 5)
     parser.add_argument('--lr', type=float,default=5.6e-5)
     parser.add_argument('--weight_decay', type=float,default=0.001)
