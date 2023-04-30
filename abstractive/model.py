@@ -2,7 +2,7 @@ import numpy as np
 import evaluate
 import nltk
 from nltk.tokenize import sent_tokenize
-from transformers import DataCollatorForSeq2Seq,Seq2SeqTrainer,Seq2SeqTrainingArguments,AutoModelForSeq2SeqLM
+from transformers import DataCollatorForSeq2Seq,Seq2SeqTrainer,Seq2SeqTrainingArguments,AutoModelForSeq2SeqLM,AutoModelForMaskedLM
 import numpy as np
 from helper import *
 
@@ -16,7 +16,8 @@ def train(args,dataset,model_checkpoint,tokenizer):
     small_train,small_validation = generate_train_dataset(dataset,tokenizer,train_size = 1700, valid_size = 200)
 
     print(model_checkpoint)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_checkpoint)
+    # model = AutoModelForSeq2SeqLM.from_pretrained(model_checkpoint)
+    model = AutoModelForMaskedLM.from_pretrained(model_checkpoint)
 
     batch_size = args.batch_size
     num_train_epochs = args.epochs
@@ -25,7 +26,7 @@ def train(args,dataset,model_checkpoint,tokenizer):
     model_name = model_checkpoint.split("/")[-1]
 
     args = Seq2SeqTrainingArguments(
-        output_dir=f"{model_name}-finetuned-gigaword",
+        output_dir=f"{model_name}-finetuned-wildfire",
         evaluation_strategy="epoch",
         learning_rate=args.lr,
         per_device_train_batch_size=batch_size,
@@ -72,5 +73,8 @@ def train(args,dataset,model_checkpoint,tokenizer):
 
     validation_metrics = trainer.evaluate()
 
-    # trainer.save_model(model_checkpoint)
     return trainer,validation_metrics
+
+def test(trainer,test_data):
+    test_obj = trainer.predict(test_data)
+    return test_obj.metrics

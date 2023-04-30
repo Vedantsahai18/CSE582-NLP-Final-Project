@@ -1,0 +1,6 @@
+transformers 
+datasets 
+rouge_score 
+evaluate
+nltk
+transformers[sentencepiece]

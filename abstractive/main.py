@@ -8,7 +8,7 @@ import pandas as pd
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--batch_size', type=int, default = 8)
+    parser.add_argument('--batch_size', type=int, default = 4)
     parser.add_argument('--epochs', type=int,default = 5)
     parser.add_argument('--lr', type=float,default=5.6e-5)
     parser.add_argument('--weight_decay', type=float,default=0.001)
@@ -23,11 +23,19 @@ def main():
     model_checkpoint = args.model
     tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
     dataset = convert_pd_to_gig(df)
+    # training the model
     trainer,val_results = train(args,dataset,model_checkpoint,tokenizer)
     print("Testing Wildfire dataset")
     print(val_results)
     print(25*"=")
-    trainer.save_model("model")
+    trainer.save_model(model_checkpoint)
+
+    # testing the model
+    test_data = generate_test_dataset(dataset,tokenizer)
+    test_results = test(trainer,test_data)
+    print("Testing Wildfire dataset")
+    print(test_results)
+    print(25*"=")
 
     # generate a summary for the test dataset
     # print("Testing Wildfire dataset")
@@ -43,7 +51,8 @@ def main():
     if not isExist:
         os.makedirs(str(args.output_path)+"_"+model_checkpoint)
 
-    write2file(str(args.output_path)+"_"+model_checkpoint,val_results,dataset="wildfire",dataset_type="testing")
+    write2file(str(args.output_path)+"_"+model_checkpoint,val_results,dataset="wildfire",dataset_type="training")
+    write2file(str(args.output_path)+"_"+model_checkpoint,test_results,dataset="wildfire",dataset_type="testing")
 
 if __name__ == "__main__":
     main()
