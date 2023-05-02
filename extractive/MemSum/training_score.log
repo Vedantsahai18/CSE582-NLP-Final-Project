@@ -1,50 +1,81 @@
-[current_batch: 00100] loss: 1.905, learning rate: 0.000100
-[current_batch: 00200] loss: 1.835, learning rate: 0.000100
-[current_batch: 00300] loss: 1.770, learning rate: 0.000100
-[current_batch: 00400] loss: 1.767, learning rate: 0.000100
-[current_batch: 00500] loss: 1.731, learning rate: 0.000100
-[current_batch: 00600] loss: 1.769, learning rate: 0.000100
+1680it [00:00, 65670.98it/s]
+297it [00:00, 55646.76it/s]
+/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+0it [00:00, ?it/s]/content/MemSum/src/MemSum_Full/train.py:227: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  remaining_mask_np = np.ones_like( doc_mask_np ).astype( np.bool ) | doc_mask_np
+/content/MemSum/src/MemSum_Full/train.py:228: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  extraction_mask_np = np.zeros_like( doc_mask_np ).astype( np.bool ) | doc_mask_np
+99it [00:55,  1.74it/s][current_batch: 00100] loss: 1.975, learning rate: 0.000100
+199it [01:56,  1.62it/s][current_batch: 00200] loss: 1.917, learning rate: 0.000100
+299it [02:55,  1.58it/s][current_batch: 00300] loss: 1.815, learning rate: 0.000100
+399it [03:54,  1.69it/s][current_batch: 00400] loss: 1.806, learning rate: 0.000100
+499it [04:53,  1.66it/s][current_batch: 00500] loss: 1.788, learning rate: 0.000100
+599it [05:53,  1.63it/s][current_batch: 00600] loss: 1.809, learning rate: 0.000100
+699it [06:51,  1.79it/s][current_batch: 00700] loss: 1.784, learning rate: 0.000100
+799it [07:50,  1.74it/s][current_batch: 00800] loss: 1.794, learning rate: 0.000100
+839it [08:14,  1.68it/s]Starting validation ...
+/content/MemSum/src/MemSum_Full/train.py:308: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  remaining_mask_np = np.ones_like( doc_mask ).astype( np.bool ) | doc_mask
+/content/MemSum/src/MemSum_Full/train.py:309: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  extraction_mask_np = np.zeros_like( doc_mask ).astype( np.bool ) | doc_mask
+val: 0.5498, 0.4177, 0.5418
+840it [08:49,  1.59it/s]
+59it [00:36,  1.65it/s][current_batch: 00900] loss: 1.104, learning rate: 0.000100
+159it [01:35,  1.58it/s][current_batch: 01000] loss: 1.771, learning rate: 0.000100
 Starting validation ...
-val: 0.7341, 0.6221, 0.7225
-[current_batch: 00700] loss: 0.160, learning rate: 0.000100
-[current_batch: 00800] loss: 1.746, learning rate: 0.000100
-[current_batch: 00900] loss: 1.752, learning rate: 0.000100
-[current_batch: 01000] loss: 1.762, learning rate: 0.000100
+val: 0.7447, 0.6643, 0.7376
+259it [03:10,  1.72it/s][current_batch: 01100] loss: 1.819, learning rate: 0.000100
+359it [04:09,  1.71it/s][current_batch: 01200] loss: 1.784, learning rate: 0.000100
+459it [05:10,  1.70it/s][current_batch: 01300] loss: 1.786, learning rate: 0.000100
+559it [06:11,  1.62it/s][current_batch: 01400] loss: 1.853, learning rate: 0.000100
+659it [07:10,  1.72it/s][current_batch: 01500] loss: 1.798, learning rate: 0.000100
+759it [08:10,  1.66it/s][current_batch: 01600] loss: 1.748, learning rate: 0.000100
+839it [08:58,  1.60it/s]Starting validation ...
+val: 0.7647, 0.6513, 0.7582
+840it [09:35,  1.46it/s]
+19it [00:12,  1.59it/s][current_batch: 01700] loss: 0.364, learning rate: 0.000100
+119it [01:12,  1.67it/s][current_batch: 01800] loss: 1.787, learning rate: 0.000100
+219it [02:13,  1.64it/s][current_batch: 01900] loss: 1.774, learning rate: 0.000100
+319it [03:12,  1.58it/s][current_batch: 02000] loss: 1.767, learning rate: 0.000100
 Starting validation ...
-val: 0.6239, 0.4282, 0.6006
-[current_batch: 01100] loss: 1.744, learning rate: 0.000100
-[current_batch: 01200] loss: 1.732, learning rate: 0.000100
-[current_batch: 01300] loss: 1.730, learning rate: 0.000100
+val: 0.8088, 0.7129, 0.8025
+419it [04:49,  1.66it/s][current_batch: 02100] loss: 1.747, learning rate: 0.000100
+519it [05:50,  1.43it/s][current_batch: 02200] loss: 1.791, learning rate: 0.000100
+619it [06:51,  1.50it/s][current_batch: 02300] loss: 1.749, learning rate: 0.000100
+719it [07:53,  1.67it/s][current_batch: 02400] loss: 1.782, learning rate: 0.000100
+819it [08:54,  1.61it/s][current_batch: 02500] loss: 1.772, learning rate: 0.000100
+839it [09:07,  1.64it/s]Starting validation ...
+val: 0.8231, 0.7671, 0.8163
+840it [09:43,  1.44it/s]
+79it [00:47,  1.72it/s][current_batch: 02600] loss: 1.353, learning rate: 0.000100
+179it [01:48,  1.66it/s][current_batch: 02700] loss: 1.731, learning rate: 0.000100
+279it [02:50,  1.62it/s][current_batch: 02800] loss: 1.746, learning rate: 0.000100
+379it [03:52,  1.59it/s][current_batch: 02900] loss: 1.746, learning rate: 0.000100
+479it [04:55,  1.57it/s][current_batch: 03000] loss: 1.759, learning rate: 0.000100
 Starting validation ...
-val: 0.7341, 0.6221, 0.7225
-[current_batch: 01400] loss: 0.312, learning rate: 0.000100
-[current_batch: 01500] loss: 1.784, learning rate: 0.000100
-[current_batch: 01600] loss: 1.724, learning rate: 0.000100
-[current_batch: 01700] loss: 1.726, learning rate: 0.000100
-[current_batch: 01800] loss: 1.749, learning rate: 0.000100
-[current_batch: 01900] loss: 1.732, learning rate: 0.000100
-[current_batch: 02000] loss: 1.718, learning rate: 0.000100
+val: 0.8231, 0.7603, 0.8163
+579it [06:31,  1.57it/s][current_batch: 03100] loss: 1.684, learning rate: 0.000100
+679it [07:33,  1.58it/s][current_batch: 03200] loss: 1.674, learning rate: 0.000100
+779it [08:35,  1.56it/s][current_batch: 03300] loss: 1.740, learning rate: 0.000100
+839it [09:12,  1.63it/s]Starting validation ...
+val: 0.8231, 0.7603, 0.8163
+840it [09:48,  1.43it/s]
+39it [00:24,  1.50it/s][current_batch: 03400] loss: 0.706, learning rate: 0.000100
+139it [01:27,  1.57it/s][current_batch: 03500] loss: 1.713, learning rate: 0.000100
+239it [02:28,  1.67it/s][current_batch: 03600] loss: 1.680, learning rate: 0.000100
+339it [03:30,  1.60it/s][current_batch: 03700] loss: 1.734, learning rate: 0.000100
+439it [04:33,  1.49it/s][current_batch: 03800] loss: 1.724, learning rate: 0.000100
+539it [05:34,  1.71it/s][current_batch: 03900] loss: 1.701, learning rate: 0.000100
+639it [06:36,  1.62it/s][current_batch: 04000] loss: 1.669, learning rate: 0.000100
 Starting validation ...
-val: 0.7341, 0.6221, 0.7225
+val: 0.6390, 0.5523, 0.6390
+739it [08:11,  1.59it/s][current_batch: 04100] loss: 1.730, learning rate: 0.000100
+839it [09:13,  1.66it/s][current_batch: 04200] loss: 1.710, learning rate: 0.000100
 Starting validation ...
-val: 0.7341, 0.6221, 0.7225
-[current_batch: 02100] loss: 0.475, learning rate: 0.000100
-[current_batch: 02200] loss: 1.745, learning rate: 0.000100
-[current_batch: 02300] loss: 1.732, learning rate: 0.000100
-[current_batch: 02400] loss: 1.697, learning rate: 0.000100
-[current_batch: 02500] loss: 1.767, learning rate: 0.000100
-[current_batch: 02600] loss: 1.763, learning rate: 0.000100
-[current_batch: 02700] loss: 1.762, learning rate: 0.000100
-Starting validation ...
-val: 0.7341, 0.6221, 0.7225
-[current_batch: 02800] loss: 0.635, learning rate: 0.000100
-[current_batch: 02900] loss: 1.744, learning rate: 0.000100
-[current_batch: 03000] loss: 1.707, learning rate: 0.000100
-Starting validation ...
-val: 0.7341, 0.6221, 0.7225
-[current_batch: 03100] loss: 1.770, learning rate: 0.000100
-[current_batch: 03200] loss: 1.709, learning rate: 0.000100
-[current_batch: 03300] loss: 1.732, learning rate: 0.000100
-[current_batch: 03400] loss: 1.745, learning rate: 0.000100
-Starting validation ...
-val: 0.7341, 0.6221, 0.7225
+val: 0.6390, 0.5523, 0.6390
+840it [09:48,  1.43it/s]
