@@ -13,28 +13,29 @@ def abstractive(pathm,text):
   tokenizer = AutoTokenizer.from_pretrained(pathm,local_files_only=True, cache_dir="model/")
   inputs = tokenizer(text, return_tensors="pt").input_ids
   model = AutoModelForSeq2SeqLM.from_pretrained(pathm)
-  outputs = model.generate(inputs, max_new_tokens=20, do_sample=False)
+  outputs = model.generate(inputs, max_new_tokens=50, do_sample=False)
   final_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
   return final_text
 
 def extractive(pathm,corpus):
-  model = MemSum( pathm, "vocabulary_200dim.pkl", gpu = 0 ,  max_doc_len = 500  ) 
+  model = MemSum( pathm, "./memsum/vocabulary_200dim.pkl", gpu = 0 ,  max_doc_len = 500  ) 
   for data in tqdm(corpus):
-    extracted_summary = model.extract( [data["text"]], p_stop_thres = 0.6, max_extracted_sentences_per_document = 7 )[0]
+    extracted_summary = model.extract( [data["text"]], p_stop_thres = 0.5, max_extracted_sentences_per_document = 5 )[0]
     ext_text = "\n".join(extracted_summary)
   return ext_text
 
 
 def main():
   #loading the dataset
-  df = pd.read_csv('corpusfinal.csv')
-  df_sample = df.sample(frac=0.5, replace=True, random_state=1)
+  df = pd.read_csv('../corpusfinal.csv')
+  # df_sample = df.sample(frac=0.5, replace=True, random_state=1)
+  df_sample = df.iloc[200:650]
 
   # #loading the model
-  path_abstractive = "t5-small"
-  path_extractive = "model_batch_3360.pt"
+  path_abstractive = "../sambydlo/bart-large-scientific-lay-summarisation"
+  path_extractive = "./memsum/model_batch_3360.pt"
 
-  # # generate a summary for the test dataset
+  # generate a summary for the test dataset
   df_test = pd.DataFrame(columns=['gold_summary','modelsummary'])
 
   for index,row in df_sample.iterrows():
@@ -44,7 +45,6 @@ def main():
 
     print("Original Text : ")
     print(text)
-    print()
 
     # getting the extractive summary
     print("Extractive Summary : ")
@@ -54,20 +54,22 @@ def main():
     corpus_lst.append(corpus_dict)
     ext_text = extractive(path_extractive,corpus_lst)
     print(ext_text)
-    print()
 
-  #  # getting the abstractive summary
+    # getting the abstractive summary
     print("Abstractive Summary : ")
     final_text = abstractive(path_abstractive,ext_text)
     print(final_text)
-
     print(25*"=")
     df_test = df_test.append({'gold_summary':summary,'modelsummary':final_text},ignore_index=True)
 
-  scores = evaluate( df_test, 0.6, 7)
+  df_test.to_csv("test.csv")
+  # df_test = pd.read_csv("test.csv")
+  scores = evaluate(df_test, 0.6, 7)
   print("ENSEMBLE ROGUE SCORES")
   print(scores)
 
+# ENSEMBLE ROGUE SCORES
+# [0.43152276 0.35247282 0.39396921]
 
 if __name__ == "__main__":
     main()

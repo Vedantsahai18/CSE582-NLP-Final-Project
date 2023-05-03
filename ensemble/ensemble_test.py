@@ -7,8 +7,8 @@ def evaluate( corpus, p_stop, max_extracted_sentences ):
     scores = []
     rouge_cal = rouge_scorer.RougeScorer(['rouge1','rouge2', 'rougeLsum'], use_stemmer=False)
     for index,rows in corpus.iterrows():
-        gold_summary = rows["abs_summary"]
-        extracted_summary = rows["ext_summary"]
+        gold_summary = rows["gold_summary"]
+        extracted_summary = rows["modelsummary"]
         score = rouge_cal.score( gold_summary, extracted_summary  )
         scores.append( [score["rouge1"].fmeasure, score["rouge2"].fmeasure, score["rougeLsum"].fmeasure ] )
     

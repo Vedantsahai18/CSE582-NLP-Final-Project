@@ -1,9 +1,9 @@
-from model import LocalSentenceEncoder as LocalSentenceEncoder_MemSum_Full
-from model import GlobalContextEncoder as GlobalContextEncoder_MemSum_Full
-from model import ExtractionContextDecoder as ExtractionContextDecoder_MemSum_Full
-from model import Extractor as Extractor_MemSum_Full
-from datautils import Vocab as Vocab_MemSum_Full
-from datautils import SentenceTokenizer as SentenceTokenizer_MemSum_Full
+from memsum.model import LocalSentenceEncoder as LocalSentenceEncoder_MemSum_Full
+from memsum.model import GlobalContextEncoder as GlobalContextEncoder_MemSum_Full
+from memsum.model import ExtractionContextDecoder as ExtractionContextDecoder_MemSum_Full
+from memsum.model import Extractor as Extractor_MemSum_Full
+from memsum.datautils import Vocab as Vocab_MemSum_Full
+from memsum.datautils import SentenceTokenizer as SentenceTokenizer_MemSum_Full
 
 
 import torch.nn.functional as F
