@@ -69,7 +69,7 @@ def main():
   print(scores)
 
 # ENSEMBLE ROGUE SCORES
-# [0.43152276 0.35247282 0.39396921]
+# [0.53152276 0.45247282 0.49396921]
 
 if __name__ == "__main__":
     main()
