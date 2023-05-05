@@ -55,7 +55,7 @@ def convert_pd_to_gig(dataset2):
 
     #  loop over the dataframe
     for index, row in dataset2.iterrows():
-        x = {'document': str(row['document']), 'summary': str(row['abs_summary'])}
+        x = {'document': str(row['document']), 'summary': str(row['summary'])}
         custom_data_dic.append(x)
     test_dataset = Dataset.from_list(custom_data_dic)
     # Create the DatasetDict

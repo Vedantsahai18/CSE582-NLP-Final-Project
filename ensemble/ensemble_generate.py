@@ -41,7 +41,7 @@ def main():
   for index,row in df_sample.iterrows():
 
     text = row["document"]
-    summary = row["abs_summary"]
+    summary = row["ummary"]
 
     print("Original Text : ")
     print(text)
