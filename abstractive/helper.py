@@ -4,17 +4,13 @@ import pandas as pd
 
 
 def generate_train_dataset(dataset,tokenizer,train_size=1950,valid_size=400):
-        max_input_length = 200
-        max_target_length = 50
 
         def preprocess_function(examples):
             model_inputs = tokenizer(
-                examples["document"],
-                max_length=max_input_length,
-                truncation=True
+                examples["document"]
             )
             labels = tokenizer(
-                examples["summary"], max_length=max_target_length, truncation=True
+                examples["summary"]
             )
             model_inputs["labels"] = labels["input_ids"]
             return model_inputs
@@ -24,17 +20,13 @@ def generate_train_dataset(dataset,tokenizer,train_size=1950,valid_size=400):
         return train_data,validation_data
 
 def generate_test_dataset(dataset,tokenizer,test_size=650):
-        max_input_length = 200
-        max_target_length = 50
 
         def preprocess_function(examples):
             model_inputs = tokenizer(
-                examples["document"],
-                max_length=max_input_length,
-                truncation=True
+                examples["document"]
             )
             labels = tokenizer(
-                examples["summary"], max_length=max_target_length, truncation=True
+                examples["summary"]
             )
             model_inputs["labels"] = labels["input_ids"]
             return model_inputs

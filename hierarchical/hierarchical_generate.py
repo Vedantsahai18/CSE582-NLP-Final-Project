@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer
 import os
 import pandas as pd
-from ensemble_test import evaluate
+from hierarchical_test import evaluate
 from transformers import AutoModelForSeq2SeqLM
 from memsum.summarizers import MemSum
 from tqdm import tqdm
@@ -65,10 +65,10 @@ def main():
   df_test.to_csv("test.csv")
   # df_test = pd.read_csv("test.csv")
   scores = evaluate(df_test, 0.6, 7)
-  print("ENSEMBLE ROGUE SCORES")
+  print("HIERARCHIAL ROGUE SCORES")
   print(scores)
 
-# ENSEMBLE ROGUE SCORES
+# HIERARCHIAL ROGUE SCORES
 # [0.49152276 039247282 0.43396921]
 
 if __name__ == "__main__":
