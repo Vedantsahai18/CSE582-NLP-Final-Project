@@ -25,7 +25,7 @@ Final Project
 └── README.md
 ```
 
-NOTE: The abstractive and extractive models are not uploaded on the github repo due to size. However the models are locally stores on the Azure Workspace were we performed most of the training and can be seen over there. In order to access a particular model please contact the authors of the project.
+NOTE: The abstractive and extractive models are not uploaded on the github repo due to size. However the models are locally stored on the Azure Workspace where we performed most of the training and can be seen over there. In order to access a particular model please contact the authors of the project.
 
 
 
